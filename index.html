@@ -22,13 +22,17 @@
         h2 {
             font-size: 1.3em;
             color: #111;
-            border-left: 5px solid #ff9900;
             padding-left: 10px;
             margin-top: 30px;
             margin-bottom: 15px;
         }
-        h2:first-of-type {
-            margin-top: 0;
+        /* マザーボード用のオレンジ帯 */
+        .mabo-theme h2 {
+            border-left: 5px solid #ff9900;
+        }
+        /* 電源用のブルー帯 */
+        .dengen-theme h2 {
+            border-left: 5px solid #0066cc;
         }
         ul {
             padding-left: 20px;
@@ -44,43 +48,92 @@
             color: #d9534f;
             font-weight: bold;
         }
+        /* 初期状態では両方非表示、JSで制御 */
+        #mabo-page, #dengen-page {
+            display: none;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <p>パーツ入れ替えのため出品いたします。</p>
 
-    <h2>【商品内容】</h2>
-    <p>MSI H510M PRO-E（マザーボード） ※ジャンク品</p>
+    <div id="mabo-page" class="mabo-theme">
+        <p>パーツ入れ替えのため出品いたします。</p>
 
-    <h2>【状態について】</h2>
-    <ul>
-        <li>掃除中にCPUソケットのピンを2本曲げてしまったため、ジャンク扱いとさせていただきます。</li>
-        <li>CPUソケット以外のパーツの故障はこちらで確認したところ見当たりませんでした。部品取り、修理ができる方にお勧めです。</li>
-    </ul>
+        <h2>【商品内容】</h2>
+        <p>MSI H510M PRO-E（マザーボード） ※ジャンク品</p>
 
-    <h2>【通電・動作確認の状態】</h2>
-    <ul>
-        <li>CPU、メモリ、グラフィックボード、補助電源を接続して起動させたところ、通電し、エラーチェックランプの「BOOT」の黄色LEDが点灯するところまで確認できました。</li>
-        <li>基盤のコントロール機能や電気系はしっかり生きている個体です。</li>
-        <li>なお、今回の検証環境ではグラフィックボードから映像の出力（BIOS画面の表示）までは確認できませんでした。</li>
-    </ul>
+        <h2>【状態について】</h2>
+        <ul>
+            <li>掃除中にCPUソケットのピンを2本曲げてしまったため、ジャンク扱いとさせていただきます。</li>
+            <li>CPUソケット以外のパーツの故障はこちらで確認したところ見当たりませんでした。部品取り、修理ができる方にお勧めです。</li>
+        </ul>
 
-    <h2>【付属品】</h2>
-    <ul>
-        <li>対応バックパネル（I/Oパネル）</li>
-        <li>マザーボード固定用ネジ一式</li>
-    </ul>
+        <h2>【通電・動作確認の状態】</h2>
+        <ul>
+            <li>CPU、メモリ、グラフィックボード、補助電源を接続して起動させたところ、通電し、エラーチェックランプの「BOOT」の黄色LEDが点灯するところまで確認できました。</li>
+            <li>基盤のコントロール機能や電気系はしっかり生きている個体です。</li>
+            <li>なお、今回の検証環境ではグラフィックボードから映像の出力（BIOS画面の表示）までは確認できませんでした。</li>
+        </ul>
 
-    <h2>【発送・注意事項】</h2>
-    <ul>
-        <li class="alert">ジャンク品のため、ノークレーム・ノーリターン（NCNR）でお願いいたします。</li>
-        <li>落札者様負担の「着払い（宅急便）」にて発送いたします。</li>
-    </ul>
-    
-    <p>よろしくお願いいたします。</p>
+        <h2>【付属品】</h2>
+        <ul>
+            <li>対応バックパネル（I/Oパネル）</li>
+            <li>マザーボード固定用ネジ一式</li>
+        </ul>
+
+        <h2>【発送・注意事項】</h2>
+        <ul>
+            <li class="alert">ジャンク品のため、ノークレーム・ノーリターン（NCNR）でお願いいたします。</li>
+            <li>落札者様負担の「着払い（宅急便）」にて発送いたします。</li>
+        </ul>
+        
+        <p>よろしくお願いいたします。</p>
+    </div>
+
+    <div id="dengen-page" class="dengen-theme">
+        <p>パーツ入れ替えのため出品いたします。</p>
+
+        <h2>【商品内容】</h2>
+        <p>玄人志向 PC電源ユニット 400W</p>
+
+        <h2>【状態・動作】</h2>
+        <ul>
+            <li>取り外す直前まで、マザーボードへの安定した通電・稼働を確認している完全動作品です。</li>
+            <li>ファンはある程度清掃してから発送いたします。</li>
+        </ul>
+
+        <h2>【付属品】</h2>
+        <ul>
+            <li>電源コード（コンセントケーブル）</li>
+        </ul>
+
+        <h2>【発送・注意事項】</h2>
+        <ul>
+            <li>送料は<strong style="color: #d9534f;">出品者負担（送料込み）</strong>にて発送いたします。</li>
+            <li class="alert">すり替え防止等のため、ノークレーム・ノーリターン（NCNR）でお願いいたします。</li>
+        </ul>
+        
+        <p>よろしくお願いいたします.</p>
+    </div>
+
 </div>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const page = urlParams.get('p');
+
+    if (page === 'dengen') {
+        // ?p=dengen のときは電源ページを表示
+        document.getElementById('dengen-page').style.display = 'block';
+        document.title = "ヤフオク商品説明用（電源ユニット）";
+    } else {
+        // それ以外のときはマザーボードページを表示
+        document.getElementById('mabo-page').style.display = 'block';
+        document.title = "ヤフオク商品説明用（マザーボード）";
+    }
+</script>
 
 </body>
 </html>
